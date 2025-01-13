@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:login/screen2.dart';
 
 class MyLogin extends StatelessWidget {
-  final TextEditingController _usernameController = TextEditingController();
-
-  final TextEditingController _passwordController = TextEditingController();
+  final usernameController = TextEditingController();
+  
+  final passwordController = TextEditingController();
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 76, 57, 243),
       body: Center(
         child: Container(
           height: 400,
           width: 400,
-          decoration: BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(30)),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(30)),
             color: Colors.white,
             border: Border.all(
               color: Colors.black,
               width: 5,
-              
             ),
           ),
           child: Padding(
@@ -36,13 +36,13 @@ class MyLogin extends StatelessWidget {
                     const Divider(),
                     const SizedBox(height: 10),
                     TextFormField(
-                      controller: _usernameController,
+                      controller: usernameController,
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(), hintText: 'Username'),
                     ),
                     const SizedBox(height: 10),
                     TextFormField(
-                      controller: _passwordController,
+                      controller: passwordController,
                       obscureText: true,
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(), hintText: 'password'),
@@ -65,29 +65,34 @@ class MyLogin extends StatelessWidget {
     );
   }
 
-  void checkLogin(BuildContext ctx) {
-    final _username = _usernameController.text;
-    final _password = _passwordController.text;
-    if (_username == _password) {
-      Navigator.of(ctx).push(MaterialPageRoute(builder: (ctx) {
-        return Screen2();
-      }));
+  void checkLogin(BuildContext context) {
+    var use = "adhil";
+    var pass = "0000";
+    if (usernameController.text == use && passwordController.text == pass){
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) {
+            return Screen2();
+          },
+        ),
+      );
     } else {
-      final _errorMessage = 'Username password doesnot match';
+     final errorMessage = 'Username password doesnot match';
 
-      ScaffoldMessenger.of(ctx).showSnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(_errorMessage),backgroundColor: Colors.red,
+          content: Text(errorMessage),
+          backgroundColor: Colors.red,
           margin: const EdgeInsets.all(20),
           behavior: SnackBarBehavior.floating,
         ),
       );
       // showDialog(
-      //     context: ctx,
+      //     context:context ,
       //     builder: (ctx1) {
       //       return AlertDialog(
       //         title: Text('error'),
-      //         content: Text(_errorMessage),
+      //         content: Text(errorMessage),
       //         actions: [
       //           TextButton(
       //             onPressed: () {

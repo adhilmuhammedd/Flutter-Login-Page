@@ -19,7 +19,6 @@ class MyLogin extends StatelessWidget {
             border: Border.all(
               color: Colors.black,
               width: 5,
-              
             ),
           ),
           child: Padding(

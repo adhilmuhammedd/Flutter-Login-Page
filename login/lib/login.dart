@@ -12,7 +12,7 @@ class MyLogin extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 76, 57, 243),
       body: Center(
         child: Container(
-          height: 400,
+          height: 401,
           width: 400,
           decoration: BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(30)),
             color: Colors.white,

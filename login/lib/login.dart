@@ -11,7 +11,7 @@ class MyLogin extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 76, 57, 243),
       body: Center(
-        child: Container(
+        child: Container( 
           height: 400,
           width: 400,
           decoration: BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(30)),

@@ -9,7 +9,7 @@ class MyLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context){ 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 76, 57, 243),
+      backgroundColor: const Color.fromARGB(255, 76, 57, 243), 
       body: Center(
         child: Container( 
           height: 400,

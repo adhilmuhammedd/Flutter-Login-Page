@@ -3,7 +3,7 @@ import 'package:login/screen2.dart';
 
 class MyLogin extends StatelessWidget {
   final usernameController = TextEditingController();
-  
+
   final passwordController = TextEditingController();
 
   @override
@@ -68,7 +68,7 @@ class MyLogin extends StatelessWidget {
   void checkLogin(BuildContext context) {
     var use = "adhil";
     var pass = "0000";
-    if (usernameController.text == use && passwordController.text == pass){
+    if (usernameController.text == use && passwordController.text == pass) {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) {
@@ -76,8 +76,62 @@ class MyLogin extends StatelessWidget {
           },
         ),
       );
-    } else {
-     final errorMessage = 'Username password doesnot match';
+    } else if (usernameController.text == passwordController.text) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Enter username and password"),
+          backgroundColor: Colors.red,
+          margin: const EdgeInsets.all(20),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }else if (usernameController.text == use) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Enter your password"),
+          backgroundColor: Colors.red,
+          margin: const EdgeInsets.all(20),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    } else if (passwordController.text == pass) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Enter your username"),
+          backgroundColor: Colors.red,
+          margin: const EdgeInsets.all(20),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }else if (usernameController.text != use && passwordController.text != pass) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("invalid username and password"),
+          backgroundColor: Colors.red,
+          margin: const EdgeInsets.all(20),
+          behavior: SnackBarBehavior.floating, 
+        ),
+      );
+      }else if (usernameController.text != use && passwordController.text == pass) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("invalid username and password"),
+          backgroundColor: Colors.red,
+          margin: const EdgeInsets.all(20),
+          behavior: SnackBarBehavior.floating, 
+        ),
+      );
+      }else if (usernameController.text == use && passwordController.text != pass) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("invalid username and password"),
+          backgroundColor: Colors.red,
+          margin: const EdgeInsets.all(20),
+          behavior: SnackBarBehavior.floating, 
+        ),
+      );
+      }else {
+      final errorMessage = 'Username password doesnot match';
 
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

@@ -7,11 +7,15 @@ class MyLogin extends StatelessWidget {
   final passwordController = TextEditingController();
 
   @override
+<<<<<<< HEAD
   Widget build(BuildContext context) {
+=======
+  Widget build(BuildContext context){  
+>>>>>>> 8c6a183cd7a4e019782bff9986b428cf4e64d6ef
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 76, 57, 243),
+      backgroundColor: const Color.fromARGB(255, 76, 57, 243), 
       body: Center(
-        child: Container(
+        child: Container( 
           height: 400,
           width: 400,
           decoration: BoxDecoration(
